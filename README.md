@@ -13,3 +13,6 @@ Recursion
 
 # NOTE
 We will only be using recursion for solutions, it is a better programming technique and is an industry standard. Some programs may not contain recursion as it would be easier to write.
+
+Please DO NOT use namespace std at all costs, it makes your code hard to read
+
