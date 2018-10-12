@@ -16,3 +16,8 @@ We will only be using recursion for solutions, it is a better programming techni
 
 Please DO NOT use namespace std at all costs, it makes your code hard to read
 
+# COMPILING
+For the unitiated, this is on a Linux platform / Mac OS if toolchain is properly installed
+```bash
+clang++ -std=c++14 [input].cpp -o output
+```
