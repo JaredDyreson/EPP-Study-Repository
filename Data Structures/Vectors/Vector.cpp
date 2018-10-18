@@ -6,7 +6,7 @@ class V_ {
   public:
     // constructors and destructors
 
-    V_() : size_(0){}
+    V_() : V_(15){};
     V_(size_t C) : size_(0), capacity_(C) , data_(new T [C]){}
     V_ operator=(const V_& vector);
     ~V_();
@@ -48,51 +48,56 @@ template <typename T>
 size_t V_<T>::capacity() { return capacity_; }
 
 template <typename T>
-T V_<T>::operator[](size_t index) { return(!empty()) ? data_[index] : throw new std::range_error("underflow"); }
+T V_<T>::operator[](size_t index) { return (index >= capacity_) ? throw std::range_error("Index exceeded capacity") : data_[index]; }
 
 template <typename T>
 bool V_<T>::empty(){ return (size_ == 0) ? 1 : 0; }
 
 
 template <typename T>
-void V_<T>::pop(){
-  if(size_ == 0) { throw new std::range_error("underflow"); }
-  data_[size_--] = T();
-
-}
+void V_<T>::pop(){ (size_ == 0) ? throw new std::range_error("underflow") : data_[--size_] = T(); }
 template <typename T>
 void V_<T>::clear(){
   if(!empty()){ pop(); }
 }
 template <typename T>
 void V_<T>::resize(size_t size){
-  if(data_ != nullptr){
+  if(data_ != nullptr){ delete [] data_ ;}
+  capacity_ = size;
   T* newData = new T[size];
-  std::copy(_II __first, _II __last, _OI __result)
-  clear();
-  data_ = newData;
-  size_ = size;
- }
+  std::copy(data_, (data_ + size_), newData);
 }
 template <typename T>
 void V_<T>::copy(const V_<T>& other){
-
+  // // if(data_ != nullptr){ delete [] data_ ;}
+  // size_ = other.size_;
+  // // T* newData = new T[capacity_];
+  // // std::copy(other.data_, (other.data_ + other.size_), newData);
+  std::cout  << "copying" << std::endl;
 }
 template <typename T>
 void V_<T>::push(T data){
-  if(size_ == capacity_){ resize(100); }
+  if(size_ == capacity_){ resize(size_*2); }
   data_[size_++] = data;
 }
-
 template <typename T>
 void V_<T>::print() {
   for(size_t i=0; i < size(); ++i) { std::cout << data_[i] << std::endl;}
 }
+
+template <typename T>
+V_<T> V_<T>::operator=(const V_<T> &vector){
+  if(*this != &vector)
+  copy(vector);
+  return vector;
+}
 int main() {
-  V_<int> vector(10);
+  V_<int> vector;
+  V_<int> V = vector;
   for(size_t i=0; i < 11; ++i){ vector.push(i); }
   vector.print();
-  vector.resize(100);
-  // std::cout << vector.size() << std::endl;
+  std::cout << vector[0] << std::endl;
+  vector.clear();
+  std::cout << vector[0] << std::endl;
   return 0;
 }
