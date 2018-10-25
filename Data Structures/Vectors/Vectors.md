@@ -1,3 +1,6 @@
+# The Hell is a Vector
+A vector is a dynamic array's older and more mature brother. It allows for easy expansion and sanity when you need to resize. It benefits from random access speeds but suffers from insertions that are not in the front and back. Since it is based on an array, it needs to shift the elements "n" amount of times to make room for the data. Sometimes it is more efficient to create a new vector and use the copy constructor to transfer the data.
+
 # Functions needed
 
 ## Constructing the Object
@@ -25,6 +28,8 @@
 - pop : remove the last element of the array (LIFO model)
 - print : same as overloaded ostream operator but you can call the function from the object
 - copy : back-end for the copy constructor
+- begin : return the beginning of the vector
+- end : return the end of the vector
 
 ## Elements
 - size_ : current number of elements
