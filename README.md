@@ -1,5 +1,6 @@
 # EPP-Study-Repository
-This is where we collaborate and attempt to not fail this damn test
+This is where we collaborate and attempt to not fail this damn test.
+
 Or Jared just writes it all thats totally fine - 10/24/2018
 
 # Script to maintain git repositories
@@ -8,14 +9,13 @@ The included file called commit can be dropped in your /usr/bin folder or creati
 export PATH=$PATH:/home/$USER/scripts
 ```
 The above scenario does work so go at it, be more productive and have a cleaner git repo
+
 Adding this file also is a sanity check just in case my computer crashes, I love this script
 # To clone
 ```bash
 git clone https://github.com/JaredDyreson/EPP-Study-Repository.git
 ```
 
-# Google Drive Folder with Topics
-https://drive.google.com/drive/folders/1BqiFwui_wDnw0q4QqjO5YuLkf_CgO4K9?usp=sharing
 # Topics
 - standard control structures for assignment, selection, repetition
 - functions
@@ -29,10 +29,10 @@ https://drive.google.com/drive/folders/1BqiFwui_wDnw0q4QqjO5YuLkf_CgO4K9?usp=sha
 - lists, stacks, queues, binary trees with both array and linked list implementations
 - searching and sorting
 
-_Please DO NOT use namespace std at all costs, it makes your code hard to read_
+_Please DO NOT use namespace std at all costs, it makes your code hard to read!!_
 
 # COMPILING
-For the unitiated, this is on a Linux platform / Mac OS if toolchain is properly installed
+For the unitiated, this was written under the assumption that Linux is your daily driver. Hopefully you can compile these in Windows, if not....well, find a way.
 ```bash
 clang++ -std=c++14 [input].cpp -o output
 ```
