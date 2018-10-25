@@ -3,6 +3,11 @@ This is where we collaborate and attempt to not fail this damn test.
 
 Or Jared just writes it all thats totally fine - 10/24/2018
 
+#NOTE
+Just found that you can bring a book to the test, please take advantage of this!!
+The book I and two others used was called Data Structures And Algorithms In C++ (Custom) by Michael T. Goodrich
+
+The used copy was only $33.00
 # Script to maintain git repositories
 The included file called commit can be dropped in your /usr/bin folder or creating a new path and adding it to PATH in your bashrc or whatever shell's default configuration file is
 ```bash

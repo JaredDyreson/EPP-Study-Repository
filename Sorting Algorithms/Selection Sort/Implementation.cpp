@@ -21,10 +21,10 @@ void selectionSort(T* array, T index){
 
 
 int main() {
-  size_t array[] = { 1, 3, 4, 2, 5 };
+  size_t array[] = {5, 7, 4, 2, 8, 6, 1, 9, 0, 3};
   size_t index = sizeof(array)/sizeof(*array);
   selectionSort(array, index);
-  for(size_t i = 0; i < 5; ++i){
+  for(size_t i = 0; i < index; ++i){
     std::cout << array[i] << std::endl;
   }
 }
