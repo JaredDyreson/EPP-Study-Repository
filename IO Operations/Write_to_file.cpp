@@ -5,9 +5,10 @@
 int main(){
   std::string line;
   std::ofstream write("write_here");
-  std::fstream stream("text_file");
-  while(std::getline(stream, line)){ write << line << std::endl; }
+  // std::fstream stream("text_file");
+  // while(std::getline(stream, line)){ write << line << std::endl; }
+  write << std::string("Jared") << std::endl;
   write.close();
-  stream.close();
+  // stream.close();
   return 0;
 }

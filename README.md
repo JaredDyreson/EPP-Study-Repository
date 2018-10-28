@@ -3,7 +3,7 @@ This is where we collaborate and attempt to not fail this damn test.
 
 Or Jared just writes it all thats totally fine - 10/24/2018
 
-# NOTE
+# ANOTE
 Just found that you can bring a book to the test, please take advantage of this!!
 The book I and two others used was called Data Structures And Algorithms In C++ (Custom) by Michael T. Goodrich
 
