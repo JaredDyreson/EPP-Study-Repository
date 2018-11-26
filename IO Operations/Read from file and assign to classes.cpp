@@ -4,6 +4,8 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <iterator>
+#include <algorithm>
 
 class Student{
   public:
@@ -20,53 +22,32 @@ class Student{
       std::vector<Student>* fucking = new std::vector<Student>;
       std::string line, line2;
       std::fstream stream("text_file");
-      // while(std::getline(stream, line, ',')){
-      //   std::istringstream ss(line);
-      //   std::string firstname_, lastname_, fullname_;
-      //   int score1,score2, score3, score4, score5, score6;
-      //   int score_ = 0;
-      //   while(ss >> firstname_ >> lastname_){
-      //     fullname_ = firstname_ + " " + lastname_;
-      //     for(int i =0 ; i < 5; ++i){
-      //       std::cout << line << std::endl;
-      //       // while(scores >> tmp1 >> tmp2){ std::cout << tmp1 << " " << tmp2; }
-      //     }
-      //     //   while(scores >> score_){
-      //     //    std::cout << score_ << sd
-      //     //   }
-      //     }
-      //     Student student(fullname_, score_);
-      //     student.setGrade(student.calculateLetterGrade(score_));
-      //     fucking->push_back(student);
-      //   }
-      std::string firstname_, lastname_, fullname_;
-      while(std::getline(stream, line, ',')) {
-        int score_keeper_ = 0;
-        Student student;
+      int score_ = 0;
+      int tmp_ = 0, tmp_2 = 0;
+      while(std::getline(stream, line)){
+        // line.erase(std::remove(line.begin(), line.end(), ','), line.end());
+        auto position = line.find_first_not_of(',');
+        // std::cout << position+1 << std::endl;
+        if(position != std::string::npos){ line.erase(position); }
+        std::cout << line << std::endl;
+        std::string firstname_, lastname_, fullname_;
         std::istringstream ss(line);
-        // std::cout << line  << std::endl;
-        // std::getline(stream, line2, ',');
         while(ss >> firstname_ >> lastname_){
-          fullname_ = firstname_ + lastname_;
-          student.setName(fullname_);
+          fullname_ = firstname_ + " " + lastname_;
+          // std::cout << fullname_ << std::endl;
         }
-        std::istringstream sl(line);
-        // std::getline(sl, line);
-        // int score_ = std::stoi(line);
-        int score_;
-        sl >> score_;
-        score_keeper_ = student.score();
-        student.setScore(score_keeper_+score_);
-        // std::cout << score_keeper_ << std::endl;
-        // std::cout  << score_keeper_ << std::endl;
-        // for(int i = 0; i < 6; ++i){
-        //   std::getline(stream, line2);
-        //   std::cout << line2  << std::endl;
-        // }
-        // while(std::getline(ss, line2)){
-        //   std::cout << line2   << "marked" << std::endl;
-        // }
-        // std::cout << line2 << std::endl;
+        std::cout << "clearing buffer.." << std::endl;
+        ss.clear();
+        ss.seekg(0, std::ios::beg);
+        while(ss >> tmp_ >> tmp_2){
+
+          score_+=tmp_;
+          std::cout << tmp_  << "marker" << std::endl;
+        }
+        std::cout << "Score: " << score_ << std::endl;
+        // score_=0;
+        // tmp_=0;
+
       }
         return *fucking;
     }
@@ -104,10 +85,11 @@ class Student{
 
 int main() {
   Student s;
-  auto e = s.loadVector();
-  for(auto student : e){
-    std::cout << student.score() << std::endl;
-  }
+  s.loadVector();
+  // auto e =
+  // for(auto student : e){
+  //   std::cout << student.score() << std::endl;
+  // }
   // std::cout << student[0].name() << std::endl;
   // for(size_t i = 0; i < 23; ++i){
   //   std::cout << student[i].name() << std::endl;
