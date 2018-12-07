@@ -1,0 +1,1 @@
+Read from STDOUT and then push all lines to a vector and print the vector size
