@@ -1,6 +1,7 @@
 // https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
 // https://medium.com/@aozturk/simple-hash-map-hash-table-implementation-in-c-931965904250
 // https://www.youtube.com/watch?v=shs0KM3wKv8
+// This method uses chaining
 #include <iostream>
 #include <string>
 #include <vector>

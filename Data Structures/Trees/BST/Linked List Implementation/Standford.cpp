@@ -69,7 +69,6 @@ class Tree{
       if(size() == 1 && r->key_ == data) { delete r; --size_; return; }
       if(data < r->key_) { Tree::remove(r->left, data); return; }
       else if(data > r->key_) { Tree::remove(r->right, data); return; }
-
     }
     size_t countNoChildren(node<T> *n) const{
       if(n == nullptr) { return 1; }
