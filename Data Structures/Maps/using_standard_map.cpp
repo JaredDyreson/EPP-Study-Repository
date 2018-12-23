@@ -1,3 +1,8 @@
+// Use a map when you need an associated value attached to a key, such as a player on a 2-D plane
+// Key - Player entity
+// Value - X, Y coordinates
+// For this however, you do need to have a compare function for this to work
+
 #include <iostream>
 #include <map>
 #include <string>

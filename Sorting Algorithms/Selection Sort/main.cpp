@@ -1,4 +1,5 @@
 #include <iostream>
+// DOES NOT WORK
 
 template <typename T>
 void swap(T* x, T* y){
@@ -29,5 +30,10 @@ void testSwap(){
 }
 
 int main() {
-
+  int a[2] = { 2, 1 };
+  selectionSort(a, 2);
+  for(size_t i = 0;i < 2; ++i){
+    std::cout << a[i] << std::endl;
+  }
+  return 0;
 }

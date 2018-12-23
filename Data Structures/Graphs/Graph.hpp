@@ -15,6 +15,7 @@ struct Edge{
 
 class Graph{
   public:
+    enum direction { visited=0, unvisited=1, discovery=2, back=3 };
     Graph(){}
     Graph(const std::vector<Edge> &edges, int n){
       adjacencyList.resize(n);
@@ -32,11 +33,11 @@ class Graph{
     }
 
     void bfs(int site_){
-      visited.resize(site_);
-      for(auto i : visited) { i = 0; }
-      std::cout << "Visited Size: " << visited.size() << std::endl;
-      std::list<size_t> q_;
-      visited.at(site_) = true;
+      // visited.resize(site_);
+      // for(auto i : visited) { i = 0; }
+      // std::cout << "Visited Size: " << visited.size() << std::endl;
+      // std::list<size_t> q_;
+      // visited.at(site_) = true;
       // q_.push_back(site_);
       // std::list<size_t>::iterator i;
       // while(!q_.empty()){
@@ -61,6 +62,6 @@ class Graph{
     }
   private:
     std::vector<std::vector<int>> adjacencyList;
-    std::vector<bool> visited;
+    std::vector<bool> visitedNodes;
     std::vector<Edge> edges;
 };
